@@ -1,0 +1,38 @@
+{
+  "name": "dis-vue-router",
+  "version": "1.0.0",
+  "description": "A Vue router power by vue-router with @Decorator",
+  "main": "index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zy445566/dis-vue-router.git"
+  },
+  "keywords": [
+    "router",
+    "vue",
+    "route",
+    "decorator",
+    "hook",
+    "hooks",
+    "vue-router"
+  ],
+  "author": "zy445566",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zy445566/dis-vue-router/issues"
+  },
+  "homepage": "https://github.com/zy445566/dis-vue-router#readme",
+  "dependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.20.0",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4",
+    "vue-router": "^4.4.3"
+  }
+}
