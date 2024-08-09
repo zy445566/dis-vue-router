@@ -1,6 +1,6 @@
 {
   "name": "dis-vue-router",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A Vue router power by vue-router with @Decorator",
   "main": "dist/index.js",
   "module": "dist/index.js",
