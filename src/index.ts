@@ -56,6 +56,7 @@ useDisRoute._export_dis_route = (routeComponent: RawRouteComponent) => {
     config: routeConfig,
     route,
   });
+  return routeComponent;
 };
 
 function finallyRoutes() {
