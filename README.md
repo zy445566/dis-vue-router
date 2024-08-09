@@ -54,6 +54,8 @@ useDisRoute({
 </script> // before setup script
 ```
 
+src\router\index.ts:
+
 ```ts
 import { createRouter, createWebHistory } from "vue-router";
 import { getDisRoutes } from "dis-vue-router";
