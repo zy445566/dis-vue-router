@@ -61,7 +61,7 @@ src\router\index.ts:
 ```ts
 import { createRouter, createWebHistory } from "vue-router";
 import { getDisRoutes } from "dis-vue-router";
-import "../views/HelloView.vue";
+import "../views/HelloView.vue"; // enable route component
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
