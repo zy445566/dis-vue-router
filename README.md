@@ -26,14 +26,15 @@ export default defineConfig({
 
 Layout/Index.vue:
 
-```tsx
+```vue
 <script lang="ts">
-import { useDisRoute } from 'dis-vue-router'
+import { useDisRoute } from "dis-vue-router";
 useDisRoute({
-  path: '/',
-  redirect:'hello'
-})
-</script> // before setup script
+  path: "/",
+  redirect: "hello",
+});
+</script>
+// before setup script
 <template>
   <div>
     <router-view />
@@ -43,15 +44,16 @@ useDisRoute({
 
 views/HelloView.vue:
 
-```tsx
+```vue
 <script lang="ts">
-import { useDisRoute } from 'dis-vue-router';
-import Layout from  "../Layout/Index.vue";
+import { useDisRoute } from "dis-vue-router";
+import Layout from "../Layout/Index.vue";
 useDisRoute({
-  path: 'hello',
-  layout: Layout
-})
-</script> // before setup script
+  path: "hello",
+  layout: Layout,
+});
+</script>
+// before setup script
 ```
 
 src\router\index.ts:
