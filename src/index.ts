@@ -33,6 +33,7 @@ export function useDisRoute(
     config: routeConfig,
     route,
   });
+  return routeComponent;
 }
 
 function finallyRoutes() {
