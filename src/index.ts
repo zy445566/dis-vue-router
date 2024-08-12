@@ -14,37 +14,35 @@ interface RouteConfig {
   redirect?: RouteRecordRedirectOption;
 }
 
-export function disRoutePlugin(): {
-  name: string;
-  transform(code: string, id: string): string | undefined;
-} {
-  return {
-    name: "dis-route-plugin",
-    transform(code: string, id: string) {
-      if (id.endsWith(".vue")) {
-        if (/useDisRoute[\s]*\(/.exec(code)) {
-          code = code.replace(
-            /export[\s]+default[\s]+(.*)/,
-            "const _export_dis_route_component = $1"
-          );
-          code += `\nexport default useDisRoute._export_dis_route(_export_dis_route_component);\n`;
-        }
-        return code;
-      }
-    },
-  };
-}
+// export function disRoutePlugin(): {
+//   name: string;
+//   transform(code: string, id: string): string | undefined;
+// } {
+//   return {
+//     name: "dis-route-plugin",
+//     transform(code: string, id: string) {
+//       if (id.endsWith(".vue")) {
+//         if (/useDisRoute[\s]*\(/.exec(code)) {
+//           code = code.replace(
+//             /export[\s]+default[\s]+(.*)/,
+//             "const _export_dis_route_component = $1"
+//           );
+//           code += `\nexport default useDisRoute._export_dis_route(_export_dis_route_component);\n`;
+//         }
+//         return code;
+//       }
+//     },
+//   };
+// }
 
 const routeDataMap: Map<
   RawRouteComponent,
   { config: RouteConfig; route: RouteRecordRaw }
 > = new Map();
-export function useDisRoute(routeConfig: RouteConfig) {
-  useDisRoute.nowRouteConfig = routeConfig;
-}
-useDisRoute.nowRouteConfig = { path: "" };
-useDisRoute._export_dis_route = (routeComponent: RawRouteComponent) => {
-  const routeConfig: RouteConfig = useDisRoute.nowRouteConfig;
+export function useDisRoute(
+  routeComponent: RawRouteComponent,
+  routeConfig: RouteConfig
+) {
   const route: RouteRecordRaw = {
     path: routeConfig.path,
     component: routeComponent,
@@ -57,7 +55,7 @@ useDisRoute._export_dis_route = (routeComponent: RawRouteComponent) => {
     route,
   });
   return routeComponent;
-};
+}
 
 function finallyRoutes() {
   const routes: RouteRecordRaw[] = [];
